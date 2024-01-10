@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Wepa\Surveys\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class SurveysCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'surveys';
 
     public $description = 'My command';
 

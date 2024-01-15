@@ -14,17 +14,18 @@ class AnswerController extends Controller
     {
         $voted = false;
         $questionsAnswers = QuestionAnswer::where('question_id', $answer->question->id)->get();
+        $clientIp = request()->server('HTTP_DO_CONNECTING_IP', request()->ip());
 
         foreach ($questionsAnswers as $questionAnswer) {
             $votes = collect($questionAnswer->votes);
-            if ($votes->contains('ip', $request->ip())) {
+            if ($votes->contains('ip', $clientIp)) {
                 $voted = true;
                 break;
             }
         }
 
         if (! $voted) {
-            $answer->questionAnswer->votes = $votes->merge([['ip' => $request->ip()]])->toArray();
+            $answer->questionAnswer->votes = $votes->merge([['ip' => $clientIp]])->toArray();
             $answer->questionAnswer->save();
         }
 

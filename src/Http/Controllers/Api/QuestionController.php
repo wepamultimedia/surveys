@@ -11,7 +11,7 @@ class QuestionController extends Controller
     /**
      * @return QuestionResource
      */
-    public function questionWithTag(string $tag)
+    public function withTag(string $tag)
     {
         $question = Question::where('tag', $tag);
 

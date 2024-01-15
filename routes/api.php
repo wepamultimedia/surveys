@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Wepa\Surveys\Http\Controllers\Api\AnswerController;
-use Wepa\Surveys\Http\Controllers\Backend\QuestionController;
+use Wepa\Surveys\Http\Controllers\Api\QuestionController;
 
 Route::prefix('api/v1/surveys')->middleware(['api'])->group(function () {
     Route::post('/answers/vote/{answer}', [AnswerController::class, 'vote'])->name('api.surveys.answers.vote');

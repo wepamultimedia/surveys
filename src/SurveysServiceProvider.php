@@ -18,14 +18,14 @@ class SurveysServiceProvider extends PackageServiceProvider
         ], ['surveys', 'surveys-pages']);
 
         // Components
-        $this->publishes([
-            __DIR__.'/../resources/js/Components' => resource_path('js/Vendor/Surveys'),
-        ], ['surveys', 'surveys-components']);
+//        $this->publishes([
+//            __DIR__.'/../resources/js/Components' => resource_path('js/Vendor/Surveys'),
+//        ], ['surveys', 'surveys-components']);
 
-        $this->publishes([
-            __DIR__.'/../tests/Unit' => base_path('tests/Unit/Surveys'),
-            __DIR__.'/../tests/Feature' => base_path('tests/Feature/Surveys'),
-        ], ['surveys-tests']);
+//        $this->publishes([
+//            __DIR__.'/../tests/Unit' => base_path('tests/Unit/Surveys'),
+//            __DIR__.'/../tests/Feature' => base_path('tests/Feature/Surveys'),
+//        ], ['surveys-tests']);
     }
 
     public function configurePackage(Package $package): void

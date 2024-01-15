@@ -38,6 +38,7 @@ class SurveysServiceProvider extends PackageServiceProvider
         $package
             ->name('surveys')
             ->hasConfigFile()
+            ->hasTranslations()
             ->hasRoutes(['web', 'admin', 'api'])
             ->hasCommand(SurveysInstallCommand::class);
     }

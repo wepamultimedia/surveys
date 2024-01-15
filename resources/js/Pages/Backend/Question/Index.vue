@@ -43,7 +43,7 @@ function status(item) {
         </Link>
     </div>
     <div class="w-full bg-white dark:bg-gray-700 overflow-hidden shadow text-skin-base rounded-lg mb-20">
-        <Table :columns="['question', {name: 'answers_count', label: 'Answers', class: 'text-center w-[1%]'}, {name: 'votes_count', label: 'Votes', class: 'text-center w-[1%]'},{name: 'status', class: 'text-center w-[1%]'},]"
+        <Table :columns="['question', {name: 'answers_count', label: __('answers'), class: 'text-center w-[1%]'}, {name: 'votes_count', label: __('votes'), class: 'text-center w-[1%]'},{name: 'status', class: 'text-center w-[1%]'},]"
                :data="questions.data"
                delete-route="admin.surveys.questions.destroy"
                divide-x

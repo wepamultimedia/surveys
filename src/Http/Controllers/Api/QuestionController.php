@@ -13,8 +13,10 @@ class QuestionController extends Controller
      */
     public function withTag(string $tag)
     {
-        $question = Question::where('tag', $tag);
+        if ($question = Question::where('tag', $tag)->first()) {
+            return QuestionResource::make($question);
+        }
 
-        return QuestionResource::make($question);
+        return null;
     }
 }

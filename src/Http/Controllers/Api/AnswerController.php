@@ -23,7 +23,7 @@ class AnswerController extends Controller
             }
         }
 
-        if (!$voted) {
+        if (! $voted) {
             $answer->questionAnswer->votes = $votes->merge([['ip' => $request->ip()]])->toArray();
             $answer->questionAnswer->save();
         }

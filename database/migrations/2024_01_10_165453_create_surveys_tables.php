@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('surveys_questions')) {
+        if (! Schema::hasTable('surveys_questions')) {
             Schema::create('surveys_questions', function (Blueprint $table) {
                 $table->id();
                 $table->string('question');
@@ -23,14 +23,14 @@ return new class extends Migration
             });
         }
 
-        if (!Schema::hasTable('surveys_answers')) {
+        if (! Schema::hasTable('surveys_answers')) {
             Schema::create('surveys_answers', function (Blueprint $table) {
                 $table->id();
                 $table->string('answer');
             });
         }
 
-        if (!Schema::hasTable('surveys_question_answer')) {
+        if (! Schema::hasTable('surveys_question_answer')) {
             Schema::create('surveys_question_answer', function (Blueprint $table) {
                 $table->id();
                 $table->foreignId('question_id');

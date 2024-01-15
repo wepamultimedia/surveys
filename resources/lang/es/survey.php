@@ -1,4 +1,5 @@
 <?php
+
 return [
     'surveys' => 'Encuestas',
     'question' => 'Pregunta',

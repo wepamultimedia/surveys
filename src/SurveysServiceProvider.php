@@ -4,7 +4,7 @@ namespace Wepa\Surveys;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Wepa\Surveys\Commands\SurveysCommand;
+use Wepa\Surveys\Commands\SurveysInstallCommand;
 
 class SurveysServiceProvider extends PackageServiceProvider
 {
@@ -39,6 +39,6 @@ class SurveysServiceProvider extends PackageServiceProvider
             ->name('surveys')
             ->hasConfigFile()
             ->hasRoutes(['web', 'admin', 'api'])
-            ->hasCommand(SurveysCommand::class);
+            ->hasCommand(SurveysInstallCommand::class);
     }
 }

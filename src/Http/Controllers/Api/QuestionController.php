@@ -11,12 +11,22 @@ class QuestionController extends Controller
     /**
      * @return QuestionResource
      */
-    public function withTag(string $tag)
+    public function byTag(string $tag)
     {
         if ($question = Question::where('tag', $tag)->first()) {
             return QuestionResource::make($question);
         }
 
         return null;
+    }
+
+    public function byId(Question $question)
+    {
+        return QuestionResource::make($question);
+    }
+
+    public function index()
+    {
+        return QuestionResource::collection(Question::where('status', 1)->get());
     }
 }
